@@ -32,14 +32,18 @@
   .section-title { font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #0d2b45; text-align: center; }
   .section-sub { font-size: 18px; color: #5a6b7c; margin-bottom: 42px; max-width: 800px; margin-left: auto; margin-right: auto; text-align: center; }
   
-  /* 产品和优势卡片 */
+  /* 产品和优势卡片（居中排版） */
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
   .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
-  .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 32px 24px; transition: box-shadow 0.2s, transform 0.2s; background: #fff; }
+  .card { border: 1px solid #e2e8f0; border-radius: 10px; padding: 32px 24px; transition: box-shadow 0.2s, transform 0.2s; background: #fff; text-align: center; }
   .card:hover { box-shadow: 0 10px 30px rgba(13,43,69,0.08); transform: translateY(-3px); }
-  .card h3 { font-size: 22px; margin-bottom: 12px; color: #0d2b45; }
-  .card p { font-size: 16px; color: #5a6b7c; line-height: 1.6; }
-  .product-tag { display: inline-block; font-size: 15px; color: #5fa8d3; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  
+  /* 简写变大：PP, PE, PVC */
+  .product-tag { display: block; font-size: 48px; font-weight: 800; color: #0d2b45; margin-bottom: 8px; letter-spacing: 1px; line-height: 1; }
+  
+  /* 全称变小：Polypropylene... */
+  .card h3 { font-size: 15px; margin-bottom: 16px; color: #5fa8d3; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+  .card p { font-size: 15px; color: #5a6b7c; line-height: 1.6; }
   
   /* 供应链关系图（三角关系） */
   .supply-diagram { display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px; margin-bottom: 30px; }
@@ -90,7 +94,7 @@
   </div>
 </header>
 
-<!-- 首页大标题（已修改为 Polymer Solution in Europe） -->
+<!-- 首页大标题 -->
 <section class="hero">
   <div class="container">
     <h1>Polymer Solution <span>in Europe</span></h1>
@@ -100,27 +104,35 @@
   </div>
 </section>
 
-<!-- 产品中心 -->
+<!-- 产品中心（按需求调整顺序和排版） -->
 <section id="products">
   <div class="container">
     <h2 class="section-title">Products</h2>
     <p class="section-sub">We supply a full range of polymer resins for European manufacturers. Grades and specifications are aligned with the supply capabilities of KPCC and Polymer Chemical Corp.</p>
     <div class="grid-5">
-      <div class="card">
-        <div class="product-tag">PP</div>
-        <h3>Polypropylene</h3>
-        <p>Homopolymer &amp; copolymer. Injection, raffia, film and fiber grades.</p>
-      </div>
+    
+      <!-- 调整顺序：PE 放前面 -->
       <div class="card">
         <div class="product-tag">PE</div>
         <h3>Polyethylene</h3>
         <p>HDPE, LDPE and LLDPE. Injection, film, pipe and blow molding grades.</p>
       </div>
+      
+      <!-- 调整顺序：PVC 放第二 -->
       <div class="card">
         <div class="product-tag">PVC</div>
         <h3>Polyvinyl Chloride</h3>
         <p>Calcium carbide and ethylene route. Pipe, profile and flexible grades.</p>
       </div>
+      
+      <!-- 调整顺序：PP 放第三 -->
+      <div class="card">
+        <div class="product-tag">PP</div>
+        <h3>Polypropylene</h3>
+        <p>Homopolymer &amp; copolymer. Injection, raffia, film and fiber grades.</p>
+      </div>
+      
+      <!-- PET 和 PS 保持不变，排在后面 -->
       <div class="card">
         <div class="product-tag">PET</div>
         <h3>Polyethylene Terephthalate</h3>
